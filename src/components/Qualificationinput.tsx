@@ -2,16 +2,16 @@ import React from "react";
 import { FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 import { UseFormReturn } from "react-hook-form";
-import { Personal_detailsType, Qualification_detailsType } from "@/lib/types";
+import { Personal_detailsType } from "@/lib/types";
 
 type Props = {
     label: string;
     type: string;
     name: "qualification" | "degree" | "area" | "year" | "university" | "country" | "grade";
-    form: UseFormReturn<Qualification_detailsType>;
+    form: UseFormReturn<Personal_detailsType>;
 };
 
-export default function Personalinput({
+export default function Qualificationinput({
     label = "",
     name,
     form,

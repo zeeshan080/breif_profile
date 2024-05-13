@@ -2,17 +2,16 @@ import React from "react";
 import { FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 import { UseFormReturn } from "react-hook-form";
-import { Profile_detailsType } from "@/lib/types";
-import { Textarea } from "./ui/textarea";
+import { Personal_detailsType } from "@/lib/types";
 
 type Props = {
     label: string;
     type: string;
     name: "date1" | "date2"
-    form: UseFormReturn<Profile_detailsType>;
+    form: UseFormReturn<Personal_detailsType>;
 };
 
-export default function Profileinput({
+export default function Dateinput({
     label = "",
     name,
     form,

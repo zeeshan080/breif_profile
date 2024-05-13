@@ -1,15 +1,14 @@
 import React from "react";
 import { FormControl, FormField, FormItem, FormLabel } from "./ui/form";
-import { Input } from "./ui/input";
 import { UseFormReturn } from "react-hook-form";
-import { Profile_detailsType } from "@/lib/types";
+import { Personal_detailsType } from "@/lib/types";
 import { Textarea } from "./ui/textarea";
 
 type Props = {
     label: string;
     type: string;
     name: "Current_Assignments" | "Achievements" | "Last_Promotion" | "Last_Promotion_Year" | "Performance_Grades" | "Status";
-    form: UseFormReturn<Profile_detailsType>;
+    form: UseFormReturn<Personal_detailsType>;
 };
 
 export default function Profileinput({
