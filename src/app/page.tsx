@@ -1,9 +1,4 @@
-import Experince from "@/components/Experince";
 import Personal_details from "@/components/Personal_details";
-import Professional from "@/components/Professional";
-import Profile from "@/components/Profile";
-import Qualification_details from "@/components/Qualification_details";
-
 export default function Page() {
     return (
         <main>
@@ -11,19 +6,6 @@ export default function Page() {
             <div>
                 <Personal_details />
             </div>
-            <div>
-                <Qualification_details />
-            </div>
-            <div>
-                <Experince />
-            </div>
-            <div>
-                <Professional />
-            </div>
-            <div>
-                <Profile />
-            </div>
-
         </main>
     );
 }
