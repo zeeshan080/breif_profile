@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const Personal_detailsSchema = z.object({
+export const Form_detailsSchema = z.object({
     name: z.string(),
     department: z.string(),
     current_position: z.string(),
@@ -32,12 +32,10 @@ export const Personal_detailsSchema = z.object({
     Last_Promotion_Year: z.string(),
     Performance_Grades: z.string(),
     Status: z.string(),
-    Employee_Signature: z.string(),
-    School_Signature: z.string(),
     date1: z.string(),
-    date2: z.string()
+    date2: z.string(),
+
+
 });
 
-export type Personal_detailsType = z.infer<typeof Personal_detailsSchema>;
-
-
+export type Form_detailsType = z.infer<typeof Form_detailsSchema>;

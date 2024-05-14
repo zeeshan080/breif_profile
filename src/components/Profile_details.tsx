@@ -1,27 +1,23 @@
 "use client"
-import { Personal_detailsSchema, Personal_detailsType } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Form } from "./ui/form";
-import Personalinput from "./Personalinput";
+import Forminputs from "./Forminputs";
 import Headings from "./Headings";
 import { Button } from "./ui/button";
-import Qualificationinput from "./Qualificationinput";
-import Experenceinput from "./Experenceinput";
-import Professionalinput from "./Professionalinput";
-import Profileinput from "./Profileinput";
 import { Checkbox } from "./ui/checkbox";
-import Dateinput from "./Dateinput";
+import { Form_detailsSchema, Form_detailsType } from "@/lib/type";
+import { Form } from "./ui/form";
 
 type Props = {};
 
-export default function Personal_details({ }: Props) {
-    const form = useForm<Personal_detailsType>({
-        resolver: zodResolver(Personal_detailsSchema),
+export default function Profile_details({ }: Props) {
+    const form = useForm<Form_detailsType>({
+        resolver: zodResolver(Form_detailsSchema),
 
     });
-    const OnSubmit = (data: Personal_detailsType) => {
+    const OnSubmit = (data: Form_detailsType) => {
         console.log(data);
+        alert("data send")
     };
     return (
         <div>
@@ -31,34 +27,33 @@ export default function Personal_details({ }: Props) {
                     className="mt-12 w-[90%] m-auto"
                 >
                     <Headings heading={"PERSONAL DETAILS"} />
-
                     <div className="grid grid-cols-2  gap-5">
                         <div>
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Name"
                                 name="name"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Department"
                                 name="department"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Current Position"
                                 name="current_position"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Date of joining"
                                 name="date_of_joining"
                                 type="date"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Gender"
                                 name="gender"
@@ -66,25 +61,25 @@ export default function Personal_details({ }: Props) {
                             />
                         </div>
                         <div>
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Employee Code"
                                 name="employee_code"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="School"
                                 name="school"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Position Applied For"
                                 name="position_applied_for"
                                 type="text"
                             />
-                            <Personalinput
+                            <Forminputs
                                 form={form}
                                 label="Date of Birth"
                                 name="date_of_brith"
@@ -92,76 +87,78 @@ export default function Personal_details({ }: Props) {
                             />
                         </div>
 
+
                     </div>
                     <Headings heading={"QUALIFICATION DETAILS"} />
 
                     <div className="grid grid-cols-2  gap-5">
                         <div>
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Qualification"
                                 name="qualification"
                                 type="text"
                             />
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Degree"
                                 name="degree"
                                 type="text"
                             />
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Area"
                                 name="area"
                                 type="text"
                             />
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Year"
                                 name="year"
                                 type="number"
                             />
 
+
                         </div>
                         <div>
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
-                                label="University/Institute"
+                                label="University"
                                 name="university"
                                 type="text"
                             />
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Country"
                                 name="country"
                                 type="text"
                             />
-                            <Qualificationinput
+                            <Forminputs
                                 form={form}
                                 label="Grade"
                                 name="grade"
                                 type="text"
                             />
-
                         </div>
+
                     </div>
                     <Headings heading={"PROFESSIONAL EXPERIENCE(Post 16 Years Qualification)"} />
 
                     <div className="grid grid-cols-2  gap-5">
                         <div>
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="Job"
                                 name="job"
                                 type="text"
                             />
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="Designation"
                                 name="designation"
                                 type="text"
                             />
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="Organization Name & City"
                                 name="oraganization"
@@ -170,19 +167,19 @@ export default function Personal_details({ }: Props) {
 
                         </div>
                         <div>
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="Start Date"
                                 name="start_date"
                                 type="date"
                             />
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="End Date"
                                 name="end_date"
                                 type="date"
                             />
-                            <Experenceinput
+                            <Forminputs
                                 form={form}
                                 label="Total Period"
                                 name="total_period"
@@ -190,78 +187,91 @@ export default function Personal_details({ }: Props) {
                             />
 
                         </div>
-                    </div>
-                    <div>
-                        <Professionalinput
-                            form={form}
-                            label="Professional Experience before UMT"
-                            name="professional_experience"
-                            type="number"
-                        />
-                        <Professionalinput
-                            form={form}
-                            label="Work Experience @ UMT"
-                            name="work_experience"
-                            type="number"
-                        />
-                        <Professionalinput
-                            form={form}
-                            label="Total Experience"
-                            name="total_experience"
-                            type="text"
-                        />
+                        <div>
+                            <Forminputs
+                                form={form}
+                                label="Professional Experience before UMT"
+                                name="professional_experience"
+                                type="number"
+                            />
+                            <Forminputs
+                                form={form}
+                                label="Work Experience @ UMT"
+                                name="work_experience"
+                                type="number"
+                            />
+                            <Forminputs
+                                form={form}
+                                label="Total Experience"
+                                name="total_experience"
+                                type="text"
+                            />
+
+                        </div>
+
+
 
                     </div>
                     <div className="mt-12">
                         <div>
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Current Assignments"
                                 name="Current_Assignments"
+                                istextarea={true}
                                 type="text"
                             />
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Achievements"
                                 name="Achievements"
+                                istextarea={true}
                                 type="text"
+
                             />
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Last Promotion as"
                                 name="Last_Promotion"
+                                istextarea={true}
                                 type="text"
+
                             />
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Last Promotion Year"
                                 name="Last_Promotion_Year"
-                                type="number"
+                                istextarea={true}
+                                type="text"
+
                             />
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Performance Grades"
                                 name="Performance_Grades"
+                                istextarea={true}
                                 type="text"
+
                             />
-                            <Profileinput
+                            <Forminputs
                                 form={form}
                                 label="Status"
                                 name="Status"
+                                istextarea={true}
                                 type="text"
+
                             />
                         </div>
-                        <div className="grid grid-cols-2 gap-5 items-center">
-                            <div className="grid w-[40%] m-auto gap-10 ">
-                                <span><Checkbox /> Employee Signature</span>
-                                <span><Checkbox /> School/UMD Head Signature</span>
-                            </div>
-                            <div>
-                                <Dateinput form={form} label="Date" name="date1" type="date" />
-                                <Dateinput form={form} label="Date" name="date2" type="date" />
-                            </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-5 items-center">
+                        <div className="grid w-[40%] m-auto gap-10 ">
+                            <span><Checkbox /> Employee Signature</span>
+                            <span><Checkbox /> School/UMD Head Signature</span>
                         </div>
-
+                        <div>
+                            <Forminputs form={form} label="Date" name="date1" type="date" />
+                            <Forminputs form={form} label="Date" name="date2" type="date" />
+                        </div>
                     </div>
                     <div>
                         <Button type="submit" className="" >Submit </Button>
